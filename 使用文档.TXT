@@ -1,0 +1,22 @@
+1 导入数据库
+进入mxonline.sql同文件夹，输入：
+mysql -u root -p mxonline<mxonline.sql
+
+2 激活虚拟环境
+命令行进入当前文件夹下的venv/Scripts文件夹下，输入activate即可
+
+3 更改数据库设置
+打开mxonline/settings.py文件，设置password:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': "mxonline",
+        'USER': "root",
+        'PASSWORD': "自己数据库密码",
+        'HOST': "127.0.0.1",
+    }
+}
+
+4 运行
+python manage.py runserver(注意在同文件夹下)，然后打开127.0.0.1:8000即可
+
